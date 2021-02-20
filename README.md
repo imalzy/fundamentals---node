@@ -1,4 +1,4 @@
-# fundamentals---node
+# fundamentals nodeJS
 This is tutorial basic for node js fundamentals.
 
 # Intro folder
