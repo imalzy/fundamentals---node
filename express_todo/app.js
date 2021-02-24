@@ -1,18 +1,25 @@
 const express = require('express');
 const app = express();
+app.set('view engine', 'ejs');
 const port = 3000;
 
 app.get('/', (req, res) => {
-  res.sendFile('./views/index.html', { root: __dirname });
+  const items = [
+    {id:1, name: 'Earphone Sony', price: 3500000},
+    {id:1, name: 'Book Python', price: 150000},
+    {id:1, name: 'Pen', price: 25000},
+    {id:1, name: 'Acer PC', price: 9500000},
+  ]
+  res.render('index', {items});
 });
 
 app.get('/add-item', (req, res) => {
-  res.sendFile('./views/add-item.html', { root: __dirname });
+  res.render('add-item');
 });
 
-app.use((req, res)=>{
-  res.sendFile('./views/404.html', { root: __dirname });
-})
+app.use((req, res) => {
+  res.render('404');
+});
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);

@@ -11,7 +11,12 @@ This folder learn how to create a server, req object,  return html, routing etc.
 This folder learn how to add npm package express js and moment js into project using `npm install express` && `npm install moment` and create a server using instance express js and create response `Hello Express`.
 
 # Express-todo
-This folder learn how to create routing, add material css inside `index.html`, add navbar, add form (to be continue .... ).
+This folder learn how to create routing, add material css inside `index.html`, add navbar, add form.
+add template engine using ejs.
+    1. `<%=` and close `%>` for Binding data into template (HTML escaped) 
+    2. `<%` and close `%>` for control flow, no output (Scriptlet tag)
+    3. `<%-` and close `%>` Outputs the unescaped value into the template
+source `https://stackoverflow.com/questions/48522768/the-difference-between-and-in-ejs`
 
 # Status Code Information
     1. Informational responses (100–199)
