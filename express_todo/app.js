@@ -1,5 +1,7 @@
 const express = require('express');
 const app = express();
+const monggodb = 'mongodb+srv://imalzy:admin@cluster0.uibh2.mongodb.net/todo_db?retryWrites=true&w=majority'
+app.set('view engine', 'ejs');
 app.set('view engine', 'ejs');
 const port = 3000;
 
