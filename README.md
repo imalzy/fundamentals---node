@@ -12,7 +12,7 @@ This folder learn how to add npm package express js and moment js into project u
 
 # Express-todo
 This folder learn how to create routing, add material css inside `index.html`, add navbar, add form.
-add template engine using ejs.
+add template engine using ejs, split code nav and head.
 
 1. `<%=` and close `%>` for Binding data into template (HTML escaped) 
 2. `<%` and close `%>` for control flow, no output (Scriptlet tag)
