@@ -12,7 +12,7 @@ This folder learn how to add npm package express js and moment js into project u
 
 # Express-todo
 This folder learn how to create routing, add material css inside `index.html`, add navbar, add form.
-add template engine using ejs, split code nav and head, add new connection using mongoose.
+add template engine using ejs, split code nav and head, add new connection using mongoose, render data from mongoDB.
 
 1. `<%=` and close `%>` for Binding data into template (HTML escaped) 
 2. `<%` and close `%>` for control flow, no output (Scriptlet tag)
@@ -22,11 +22,11 @@ source `https://stackoverflow.com/questions/48522768/the-difference-between-and-
 
 <hr />
 Getting and Saving with Mongoose
- - Created Schema, 
- - Create using `save`
- - List using `Schema.find()`
- - GetById using `Schema.findBy()`
-
+    1. Created Schema
+    2. Create using `save`
+    3. List using `Schema.find()`
+    4. GetById using `Schema.findBy()`
+    
 # Status Code Information
     1. Informational responses (100–199)
     2. Successful responses (200–299)

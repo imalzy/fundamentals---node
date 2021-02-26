@@ -26,22 +26,18 @@ app.get('/create', (req, res)=>{
   item.save().then(result=>res.send(result));
 });
 
-app.get('/list', (req, res)=>{
-  Item.find().then(result=>res.send(result));
-});
-
 app.get('/itembyid', (req, res)=>{
   Item.findById({_id: "603857534f31da42a8b86658"}).then(result=>res.send(result));
 });
 
 app.get('/', (req, res) => {
-  const items = [
-    { id: 1, name: 'Earphone Sony', price: 3500000 },
-    { id: 1, name: 'Book Python', price: 150000 },
-    { id: 1, name: 'Pen', price: 25000 },
-    { id: 1, name: 'Acer PC', price: 9500000 },
-  ]
-  res.render('index', { items });
+  res.redirect('/list');
+});
+
+app.get('/list', (req, res)=>{
+  Item.find().then(result=>{
+    res.render('index', { items: result });
+  });
 });
 
 app.get('/add-item', (req, res) => {
