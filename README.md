@@ -20,6 +20,13 @@ add template engine using ejs, split code nav and head, add new connection using
     
 source `https://stackoverflow.com/questions/48522768/the-difference-between-and-in-ejs`
 
+<hr />
+Getting and Saving with Mongoose
+ - Created Schema, 
+ - Create using `save`
+ - List using `Schema.find()`
+ - GetById using `Schema.findBy()`
+
 # Status Code Information
     1. Informational responses (100–199)
     2. Successful responses (200–299)
