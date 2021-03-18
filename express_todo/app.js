@@ -51,8 +51,7 @@ app.get("/items", (req, res) => {
 app.get("/item/:id", (req, res) => {
   const id = req.params.id;
   Item.findById({ _id: `${id}` }).then((result) =>
-    // res.send(result)
-    console.log(result)
+    res.render("item-detail", {item : result})
   );
 });
 
