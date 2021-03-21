@@ -4,6 +4,11 @@ const bodyParser = require("body-parser");
 const Item = require("./models/items");
 const app = express();
 const port = 3000;
+
+handleError = (err) => {
+  return err;
+};
+
 const mongodb =
   "mongodb+srv://imalzy:admin@cluster0.uibh2.mongodb.net/todo_db?retryWrites=true&w=majority";
 mongoose
@@ -51,7 +56,7 @@ app.get("/items", (req, res) => {
 app.get("/item/:id", (req, res) => {
   const id = req.params.id;
   Item.findById({ _id: `${id}` }).then((result) =>
-    res.render("item-detail", {item : result})
+    res.render("item-detail", { item: result })
   );
 });
 
@@ -67,6 +72,15 @@ app.post("/add", (req, res) => {
       res.redirect("/list");
     })
     .catch((err) => console.log(err));
+});
+
+app.delete("/item/:id", (req, res) => {
+  const id = req.params.id;
+  Item.findByIdAndDelete({ _id: `${id}` }).then((result) => {
+    if (result) {
+      res.json({redirect : '/list'});
+    }
+  });
 });
 
 app.use((req, res) => {
