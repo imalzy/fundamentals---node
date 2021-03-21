@@ -12,12 +12,11 @@
         <% if (items.length> 0) {%> <% items.forEach(item=> {%>
         <li class="collection-item">
           <div>
-            <a href="/add-item/<%= item._id %>" rel="noopener noreferrer">
-              <%= item.name %> || <%= item.price %></a>
-            <a href="#!" class="secondary-content">
-              <i class="material-icons red-text">delete</i>
-              <i class="material-icons">edit</i>
-            </a>
+            <%= item.name %> || <%= item.price %>
+            <div class="secondary-content">
+              <a><i class="material-icons red-text">delete</i></a>
+              <a href="/item/<%= item._id%>" style="cursor: pointer;"><i class="material-icons">edit</i></a>
+            </div>
           </div>
         </li>
         <% }); %> <%} else {%>

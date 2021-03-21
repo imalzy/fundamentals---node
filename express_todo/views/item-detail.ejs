@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./partials/head.ejs') %>
+  <body>
+    <!-- <% const title ='Dynamic content' %> declare
+        
+        <%= title %> binding to html-->
+    <%- include('./partials/nav.ejs') %>
+
+    <div class="container">
+      <h4>Item Detail</h4>
+      <div>
+        <h5><%= item.name%></h5>
+        <h6>Price <%= item.price%></h6>
+      </div>
+      <button
+        class="btn-small waves-effect waves-light"
+        type="submit"
+        name="action"
+      >
+        Delete
+      </button>
+    </div>
+
+    <!-- add material script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  </body>
+</html>

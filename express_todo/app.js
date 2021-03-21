@@ -39,16 +39,23 @@ app.get("/itembyid", (req, res) => {
 });
 
 app.get("/", (req, res) => {
-  res.redirect("/list");
+  res.redirect("/items");
 });
 
-app.get("/list", (req, res) => {
+app.get("/items", (req, res) => {
   Item.find().then((result) => {
     res.render("index", { items: result });
   });
 });
 
-app.get("/add-item", (req, res) => {
+app.get("/item/:id", (req, res) => {
+  const id = req.params.id;
+  Item.findById({ _id: `${id}` }).then((result) =>
+    res.render("item-detail", {item : result})
+  );
+});
+
+app.get("/item", (req, res) => {
   res.render("add-item");
 });
 
