@@ -57,7 +57,9 @@ app.get("/item/:id", (req, res) => {
   const id = req.params.id;
   Item.findById({ _id: `${id}` }).then((result) =>
     res.render("item-detail", { item: result })
-  );
+  ).catch(err=>{
+    res.redirect("/items");
+  });
 });
 
 app.get("/item", (req, res) => {
@@ -69,7 +71,7 @@ app.post("/add", (req, res) => {
   item
     .save()
     .then(() => {
-      res.redirect("/list");
+      res.redirect("/items");
     })
     .catch((err) => console.log(err));
 });
@@ -78,7 +80,7 @@ app.delete("/item/:id", (req, res) => {
   const id = req.params.id;
   Item.findByIdAndDelete({ _id: `${id}` }).then((result) => {
     if (result) {
-      res.json({redirect : '/list'});
+      res.json({redirect : '/items'});
     }
   });
 });
