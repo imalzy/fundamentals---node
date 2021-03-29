@@ -14,15 +14,32 @@
         <h6>Price <%= item.price%></h6>
       </div>
       <button
+      id="onDelete"
         class="btn-small waves-effect waves-light"
         type="submit"
         name="action"
+        data-id="<%= item._id %>"
       >
         Delete
       </button>
     </div>
 
     <!-- add material script -->
+    <script>
+      onDelete.onclick = (e)=>{
+        e.preventDefault();
+        const id = onDelete.dataset.id;
+        const endpoint = `/item/${id}`;
+
+        fetch(endpoint, {
+          method: 'DELETE'
+        }).then((res)=>res.json()).then(data=>{
+          window.location.href = data.redirect;
+        }).catch(err=>{
+          console.log(err);
+        })
+      }
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   </body>
 </html>
