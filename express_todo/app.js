@@ -76,6 +76,14 @@ app.post("/add", (req, res) => {
     .catch((err) => console.log(err));
 });
 
+app.put("/item/:id", (req, res) => {
+  const id = req.params.id;
+  Item.findByIdAndUpdate({ _id: `${id}` }, req.body).then((result) => {
+    console.log(result);
+    res.json({message: 'Update Successfully'})
+  });
+});
+
 app.delete("/item/:id", (req, res) => {
   const id = req.params.id;
   Item.findByIdAndDelete({ _id: `${id}` }).then((result) => {
